@@ -1,0 +1,33 @@
+﻿@model ÜrünYönetimSistemi.Models.Entity.TBLURUNLER
+@{
+    ViewBag.Title = "YENIURUN";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div style="margin-top:15px">
+        <label>Ürün  Adı</label>
+        <input type="text" class="form-control" name="URUNAD" required="" />
+    </div>
+    <div style="margin-top:15px">
+        <label>Ürün  Resmi</label>
+        <input type="text" class="form-control" name="URUNRESMİ" required="" />
+    </div>
+    <div style="margin-top:15px">
+        <label>Kategori</label>
+        @Html.DropDownListFor(m => m.TBLKATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Fiyat</label>
+        <input type="text" class="form-control" name="FIYAT" required="" />
+    </div>
+    <div style="margin-top:15px">
+        <label>Stok</label>
+        <input type="text" class="form-control" name="STOK" required="" />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Yeni Ürün  Ekle</button>
+    </div>
+
+</form>
+

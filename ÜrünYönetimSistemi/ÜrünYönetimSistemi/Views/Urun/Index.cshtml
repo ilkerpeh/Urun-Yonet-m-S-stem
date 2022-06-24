@@ -1,0 +1,40 @@
+﻿@using ÜrünYönetimSistemi.Models.Entity
+@model List<TBLURUNLER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ÜRÜN ID</th>
+        <th>ÜRÜN ADI</th>
+        <th>ÜRÜN RESMİ</th>
+        <th>KATEGORİ</th>
+        <th>FİYAT</th>
+        <th>STOK</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        
+    </tr>
+    <tbody>
+        @foreach(var urn in Model)
+            {
+        <tr>
+            <th>@urn.URUNID</th>
+            <td>@urn.URUNAD</td>
+            <td>
+                <img src="@urn.URUNRESMİ" width="100" height="120" />
+            </td>
+            <td>@urn.TBLKATEGORILER.KATEGORIAD</td>
+            <td>@urn.FIYAT</td>
+            <td>@urn.STOK</td>
+            <td><a href="/Urun/SIL/@urn.URUNID" class="btn btn-danger">SİL</a></td>
+            <td><a href="/Urun/UrunGetir/@urn.URUNID" class="btn btn-success">GÜNCELLE</a></td>
+        </tr>
+            }
+
+    </tbody>
+</table>
+<a href="/Urun/YENIURUN/" class="btn btn-primary">YENİ ÜRÜN EKLE</a>
+

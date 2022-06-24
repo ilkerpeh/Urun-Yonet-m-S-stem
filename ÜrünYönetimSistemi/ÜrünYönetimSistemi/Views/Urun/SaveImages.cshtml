@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "SaveImages";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Resim Ekleme Alanı</h2>
+
+@using(Html.BeginForm("SaveImages", "Urun", FormMethod.Post, new { encytpe = "multipart/form-data" }))
+{
+    <div class="container">
+        <div>
+            <label>Ürün Resim</label>
+            <input type="file" name="URUNRESMİ" class="form-control" />
+        </div>
+        <br />
+        <div>
+            <button class="btn btn-info">Ekle</button>
+        </div>
+    </div>
+}
+<br />
+<p>@Html.ActionLink("Ürünler Sayfasına Dön", "Index")</p>

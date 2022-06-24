@@ -1,0 +1,22 @@
+﻿@model ÜrünYönetimSistemi.Models.Entity.TBLURUNLER
+@{
+    Layout = null;
+}
+
+<h2>PERSONEL EKLEME FORMU</h2>
+<br />
+<br />
+@using (Html.BeginForm("Ekle", "test", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <p>Urun Adı</p>
+    @Html.TextBoxFor(x => x.URUNAD)
+    <p>Urun Kategori</p>
+    @Html.TextBoxFor(x => x.URUNKATEGORI)
+    <p>Fıyat</p>
+    @Html.TextBoxFor(x => x.FIYAT)
+    <p>Stok</p>
+    @Html.TextBoxFor(x => x.STOK)
+    <p>Ürün Resmi</p>
+    @Html.TextBoxFor(x => x.URUNRESMİ)
+    <input type="file" name="URUNRESMİ" />
+}   <input type="submit" value="Kaydet" />      

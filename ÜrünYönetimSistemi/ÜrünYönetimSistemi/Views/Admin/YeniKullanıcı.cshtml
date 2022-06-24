@@ -1,0 +1,18 @@
+﻿@model ÜrünYönetimSistemi.Models.classlar.AnaSayfa
+@{
+    ViewBag.Title = "YeniKullanıcı";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Kullanıcı Ekle</h2>
+<br />
+<form class="form-group" method="post">
+    <div style="margin-top:15px">
+        <label>Kullanıcı Adı</label>
+        @Html.TextBoxFor(m => m.isim, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.isim, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Yeni Kullanıcı Ekle</button>
+    </div>
+</form>

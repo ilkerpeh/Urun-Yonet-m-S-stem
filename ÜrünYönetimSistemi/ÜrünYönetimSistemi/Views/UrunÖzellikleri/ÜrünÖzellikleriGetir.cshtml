@@ -1,0 +1,26 @@
+﻿@model ÜrünYönetimSistemi.Models.Entity.TBLURUNOZELLIKLERI
+@{
+    ViewBag.Title = "ÜrünÖzellikleriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "UrunÖzellikleri", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.URUNOZELLIGIID)
+    @Html.TextBoxFor(m => m.URUNOZELLIGIID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.OZELLIKADI)
+    @Html.TextBoxFor(m => m.OZELLIKADI, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.OZELLIKDEGERI)
+    @Html.TextBoxFor(m => m.OZELLIKDEGERI, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.URUNID)
+    @Html.TextBoxFor(m => m.URUNID, new { @class = "form-control" })
+    <br />
+</div>
+<div>
+    <button class="btn btn-warning">Kategori Güncelle</button>
+</div>
+}

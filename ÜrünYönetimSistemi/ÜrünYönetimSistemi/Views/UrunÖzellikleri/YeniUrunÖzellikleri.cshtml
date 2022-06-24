@@ -1,0 +1,32 @@
+﻿@model ÜrünYönetimSistemi.Models.Entity.TBLURUNOZELLIKLERI
+@{
+    ViewBag.Title = "YeniUrunÖzellikleri";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+
+        <div style="margin-top:15px">
+           <label>Ürün Özellik Adı</label>
+            @Html.TextBoxFor(m => m.OZELLIKADI, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.OZELLIKADI, "", new { @style = "color:red" })
+        </div>
+        <div style="margin-top:15px">
+            <label>Ürün Özellik Değeri</label>
+            @Html.TextBoxFor(m => m.OZELLIKDEGERI, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.OZELLIKDEGERI, "", new { @style = "color:red" })
+        </div>
+        <div style="margin-top:15px">
+            <label>Ürün Id</label>
+            @Html.TextBoxFor(m => m.URUNID, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.URUNID, "", new { @style = "color:red" })
+        </div>
+
+
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Yeni Ürün Özelliği Ekle</button>
+    </div>
+
+</form>
+
